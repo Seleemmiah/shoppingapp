@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp_app/pages/notification_widget.dart';
 
 import '../components/shoe_tile.dart';
 import '../models/shoe.dart';
@@ -73,6 +74,9 @@ class _ShopPageState extends State<ShopPage> {
           ),
         ),
 
+        // Notification Widget
+        // NotificationWidget(),
+
         // message
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 25.0),
@@ -110,6 +114,7 @@ class _ShopPageState extends State<ShopPage> {
 
         Expanded(
           child: ListView.builder(
+            //itemCount: 4,
             itemCount: shoes.length,
             //scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {

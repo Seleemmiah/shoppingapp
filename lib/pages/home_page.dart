@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:myapp_app/pages/notification_widget.dart';
 import '../components/bottom_nav.dart';
 import 'cart_page.dart';
+import 'notification_widget.dart';
 import 'shop_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,6 +22,13 @@ class _HomePageState extends State<HomePage> {
       _selectedIndex = index;
     });
   }
+
+  // this method add notification button
+  // void addNotification() {
+  //   setState(() {
+  //     notifictaionCount++;
+  //   });
+  // }
 
   // pages to display
   final List<Widget> _pages = [
@@ -52,8 +61,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.notifications),
             onPressed: () {
-              // handle notification
-              //Scaffold.of(context).openDrawer();
+              NotificationWidget();
             },
           ),
         ],
