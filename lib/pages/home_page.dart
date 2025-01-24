@@ -62,6 +62,11 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.notifications),
             onPressed: () {
               NotificationWidget();
+              // Navigator.push(context, MaterialPageRoute(
+              //   builder: (context) {
+              //     return NotificationWidget();
+              //   },
+              // ));
             },
           ),
         ],

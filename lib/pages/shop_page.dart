@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp_app/pages/notification_widget.dart';
-
+//import 'package:myapp_app/pages/notification_widget.dart';
 import '../components/shoe_tile.dart';
 import '../models/shoe.dart';
 
@@ -114,12 +113,16 @@ class _ShopPageState extends State<ShopPage> {
 
         Expanded(
           child: ListView.builder(
-            //itemCount: 4,
+            scrollDirection: Axis.horizontal,
             itemCount: shoes.length,
-            //scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return ShoeTile(
-                shoe: shoes[index],
+              return Container(
+                width: 330,
+                //height: 25,
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                child: ShoeTile(
+                  shoe: shoes[index],
+                ),
               );
             },
           ),

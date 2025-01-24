@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 import 'package:myapp_app/models/shoe.dart';
 
@@ -15,13 +17,76 @@ class ShoeTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // shoe pics
-          Image.asset(shoe.imagePath)
+          ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                shoe.imagePath,
+                // height: 100,
+                // width: 100,
+                fit: BoxFit.cover,
+              )),
+          // Spacing after the image
+          SizedBox(
+            height: 5,
+          ),
 
           //description
+          Text(
+            shoe.description,
+            style: TextStyle(color: Colors.grey[600]),
+          ),
 
           // price + details
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // shoe name
+                    Text(
+                      shoe.name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+
+                    // space in between
+                    SizedBox(
+                      height: 5,
+                    ),
+
+                    //shoe price
+                    Text(
+                      '\$' + shoe.price,
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+
+                // add button
+                Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            bottomRight: Radius.circular(12))),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    )),
+              ],
+            ),
+          )
 
           // cart button
         ],
