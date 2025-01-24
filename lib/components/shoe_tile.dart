@@ -21,24 +21,34 @@ class ShoeTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // shoe pics
-          ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                shoe.imagePath,
-                // height: 100,
-                // width: 100,
-                fit: BoxFit.cover,
-              )),
+          Expanded(
+            flex: 2,
+            child: Center(
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    shoe.imagePath,
+                    // height: 100,
+                    // width: 100,
+                    fit: BoxFit.contain,
+                  )),
+            ),
+          ),
           // Spacing after the image
           SizedBox(
             height: 5,
           ),
 
           //description
-          Text(
-            shoe.description,
-            style: TextStyle(color: Colors.grey[600]),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 60.0),
+            child: Text(
+              shoe.description,
+              style: TextStyle(color: Colors.grey[600]),
+            ),
           ),
+
+          SizedBox(height: 5), // Add this for fine spacing above
 
           // price + details
           Padding(

@@ -126,6 +126,16 @@ class _ShopPageState extends State<ShopPage> {
               );
             },
           ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 50.0,
+            left: 50.0,
+            right: 50.0,
+          ),
+          child: Divider(
+            color: Colors.white,
+          ),
         )
         // Expanded(
         //   child: ListView.builder(
